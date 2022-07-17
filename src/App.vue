@@ -1,26 +1,26 @@
 <template>
-  <img class="inline-block" alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <ToggleMode />
+  <div class="text-center">
+    <img class="inline-block" alt="Vue logo" src="./assets/logo.png" />
+    <HelloWorld :msg="msg" />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { ref } from "vue";
+import HelloWorld from "./components/HelloWorld.vue";
+import ToggleMode from "./components/ToggleMode.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
-</script>
+    HelloWorld,
+    ToggleMode,
+  },
+  setup() {
+    const msg = ref("Welcome to Your Vue.js App");
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+    return { msg };
+  },
+};
+</script>
