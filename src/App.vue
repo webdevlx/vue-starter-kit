@@ -1,26 +1,25 @@
 <template>
+  <ToggleLang />
   <ToggleMode />
   <div class="text-center">
     <img class="inline-block" alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld :msg="msg" />
+    <p>{{ $t("message") }}</p>
   </div>
 </template>
 
 <script>
-import { ref } from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
+import ToggleLang from "./components/ToggleLang.vue";
 import ToggleMode from "./components/ToggleMode.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    ToggleLang,
     ToggleMode,
   },
-  setup() {
-    const msg = ref("Welcome to Your Vue.js App");
-
-    return { msg };
+  created() {
+    this.$i18n.locale =
+      localStorage.getItem("lang") || process.env.VUE_APP_I18N_LOCALE;
   },
 };
 </script>
