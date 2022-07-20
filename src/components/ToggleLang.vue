@@ -1,20 +1,32 @@
 <template>
-  <select
-    class="absolute top-4 left-4 appearance-none outline-none py-1 px-4 rounded bg-neutral-100 dark:bg-neutral-800 border border-neutral-600 dark:border-neutral-300"
-    v-model="lang"
-    @change="toggleLang()"
+  <button @click="toggleShowLangs()" @contextmenu.prevent="toggleShowLangs()">
+    <LangIcon class="w-6 h-6" />
+  </button>
+  <div
+    v-if="isShowLangs"
+    class="absolute top-12 right-14 lg:top-14 rounded p-1 border border-neutral-400 dark:border-neutral-700 bg-neutral-200 dark:bg-neutral-800 flex flex-col gap-1"
   >
-    <option v-for="lang in langs" :key="lang" :value="lang.short">
+    <button
+      class="px-4 bg-white dark:bg-neutral-900 rounded border border-neutral-400 dark:border-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-800 duration-300"
+      @click="toggleLang(lang.short)"
+      @contextmenu.prevent="toggleLang(lang.short)"
+      v-for="lang in langs"
+      :key="lang"
+    >
       {{ lang.title }}
-    </option>
-  </select>
+    </button>
+  </div>
 </template>
 
 <script>
+import LangIcon from "@/icons/LangIcon.vue";
 export default {
+  components: {
+    LangIcon,
+  },
   data() {
     return {
-      lang: localStorage.getItem("lang"),
+      isShowLangs: false,
       langs: [
         {
           short: "en",
@@ -32,9 +44,13 @@ export default {
     };
   },
   methods: {
-    toggleLang() {
-      this.$i18n.locale = this.lang;
-      localStorage.setItem("lang", this.lang);
+    toggleShowLangs() {
+      this.isShowLangs = !this.isShowLangs;
+    },
+    toggleLang(lang) {
+      this.$i18n.locale = lang;
+      localStorage.setItem("lang", lang);
+      this.toggleShowLangs();
     },
   },
 };

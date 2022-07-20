@@ -5,13 +5,14 @@
 @tailwind utilities;
 
 body {
-  @apply bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white duration-300 select-none
+  @apply bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white select-none;
 }
 
-button, a {
-  @apply cursor-default lg:cursor-pointer
+button,
+a {
+  @apply cursor-default lg:cursor-pointer outline-none;
 }
 
 img {
-  @apply pointer-events-none
+  @apply pointer-events-none;
 }

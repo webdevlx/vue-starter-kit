@@ -1,21 +1,19 @@
 <template>
-  <ToggleLang />
-  <ToggleMode />
-  <div class="text-center">
-    <img class="inline-block" alt="Vue logo" src="./assets/logo.png" />
-    <p>{{ $t("message") }}</p>
+  <NavBar />
+  <SideBarMobile />
+  <div class="p-2 lg:p-4">
+    <router-view />
   </div>
 </template>
 
 <script>
-import ToggleLang from "./components/ToggleLang.vue";
-import ToggleMode from "./components/ToggleMode.vue";
-
+import NavBar from "@/components/NavBar.vue";
+import SideBarMobile from "@/components/SideBarMobile.vue";
 export default {
   name: "App",
   components: {
-    ToggleLang,
-    ToggleMode,
+    NavBar,
+    SideBarMobile,
   },
   created() {
     this.$i18n.locale =
