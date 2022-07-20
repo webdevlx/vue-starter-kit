@@ -1,5 +1,8 @@
 # vue-starter-kit
 
+## Live Demo
+[Vue App - Starter Kit](https://vue-starter-kit.netlify.app/)
+
 ## Project setup
 ```
 npm install
