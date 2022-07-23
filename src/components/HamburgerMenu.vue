@@ -11,6 +11,7 @@
 <script>
 import MenuIcon from "@/icons/MenuIcon.vue";
 export default {
+  name: "HamburgerMenu",
   components: {
     MenuIcon,
   },

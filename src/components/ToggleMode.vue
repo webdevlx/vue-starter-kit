@@ -1,15 +1,27 @@
 <template>
   <button @click="toggleDark()" @contextmenu.prevent="toggleDark()">
-    <MoonIcon class="w-6 h-6" v-if="isDark" />
-    <SunIcon class="w-6 h-6" v-else />
+    <Transition mode="out-in">
+      <MoonIcon v-if="isDark" class="w-6 h-6" />
+      <SunIcon v-else-if="!isDark" class="w-6 h-6" />
+    </Transition>
   </button>
 </template>
 
-<script setup>
+<script>
 import MoonIcon from "@/icons/MoonIcon.vue";
 import SunIcon from "@/icons/SunIcon.vue";
 import { useDark, useToggle } from "@vueuse/core";
+export default {
+  name: "ToggleMode",
+  components: {
+    MoonIcon,
+    SunIcon,
+  },
+  setup() {
+    const isDark = useDark();
+    const toggleDark = useToggle(isDark);
 
-const isDark = useDark();
-const toggleDark = useToggle(isDark);
+    return { isDark, toggleDark };
+  },
+};
 </script>

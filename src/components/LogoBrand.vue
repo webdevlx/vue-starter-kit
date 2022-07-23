@@ -10,6 +10,7 @@
 <script>
 import LogoIcon from "@/icons/LogoIcon.vue";
 export default {
+  name: "LogoBrand",
   components: {
     LogoIcon,
   },

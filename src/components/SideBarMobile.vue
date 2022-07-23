@@ -22,6 +22,7 @@
 <script>
 import LogoBrand from "@/components/LogoBrand.vue";
 export default {
+  name: "SideBarMobile",
   components: {
     LogoBrand,
   },

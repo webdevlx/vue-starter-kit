@@ -16,3 +16,15 @@ a {
 img {
   @apply pointer-events-none;
 }
+
+.v-enter-active,
+.v-leave-active {
+  @apply transition-all ease-linear;
+}
+
+.v-enter-from {
+  @apply opacity-0 translate-y-4;
+}
+.v-leave-to {
+  @apply opacity-0 -translate-y-4;
+}
