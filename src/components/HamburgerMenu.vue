@@ -1,19 +1,23 @@
 <template>
   <button
-    @click="$store.state.openSideBarMobile = true"
-    @contextmenu.prevent="$store.state.openSideBarMobile = true"
+    @click="$store.state.openSideBarMobile = !$store.state.openSideBarMobile"
+    @contextmenu.prevent="
+      $store.state.openSideBarMobile = !$store.state.openSideBarMobile
+    "
     class="lg:hidden"
   >
-    <MenuIcon class="w-6 h-6" />
+    <AysncMenuIcon class="w-6 h-6" />
   </button>
 </template>
 
 <script>
-import MenuIcon from "@/icons/MenuIcon.vue";
+import { defineAsyncComponent } from "vue";
 export default {
   name: "HamburgerMenu",
   components: {
-    MenuIcon,
+    AysncMenuIcon: defineAsyncComponent(() =>
+      import("@/icons/MenuIcon.vue" /* webpackChunkName: "menu-icon" */)
+    ),
   },
 };
 </script>

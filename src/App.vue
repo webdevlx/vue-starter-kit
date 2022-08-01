@@ -1,19 +1,22 @@
 <template>
-  <NavBar />
-  <SideBarMobile />
-  <div class="p-2 lg:p-4">
+  <AysncNavBar />
+  <AysncSideBar />
+  <div class="pt-14 lg:pt-16 lg:ml-64">
     <router-view />
   </div>
 </template>
 
 <script>
-import NavBar from "@/components/NavBar.vue";
-import SideBarMobile from "@/components/SideBarMobile.vue";
+import { defineAsyncComponent } from "vue";
 export default {
   name: "App",
   components: {
-    NavBar,
-    SideBarMobile,
+    AysncNavBar: defineAsyncComponent(() =>
+      import("@/components/NavBar.vue" /* webpackChunkName: "nav-bar" */)
+    ),
+    AysncSideBar: defineAsyncComponent(() =>
+      import("@/components/SideBar.vue" /* webpackChunkName: "side-bar" */)
+    ),
   },
   created() {
     this.$i18n.locale =
