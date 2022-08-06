@@ -2,11 +2,33 @@
   <Transition name="slide">
     <aside
       v-if="$store.state.openSideBarMobile || width >= 1024"
-      class="z-40 w-64 fixed top-14 lg:top-16 bottom-0 left-0 overflow-y-auto bg-white dark:bg-neutral-900 border-r border-neutral-400 dark:border-neutral-700"
+      class="z-40 w-64 lg:w-16 fixed top-14 lg:top-16 bottom-0 left-0 overflow-y-auto bg-white dark:bg-neutral-900 border-r border-neutral-400 dark:border-neutral-700"
     >
       <!-- Show LogoBrand only Small Size -->
       <div class="flex lg:hidden items-center gap-4 p-4">
-        <AysncLogoBrand />
+        <AsyncLogoBrand />
+      </div>
+      <div class="mt-3 flex flex-col space-y-2 px-2">
+        <router-link
+          class="w-full lg:w-12 lg:h-12 rounded text-xl leading-10 bg-neutral-200 dark:bg-neutral-700 flex justify-start lg:justify-center items-center pl-4 lg:pl-0"
+          @click="$store.state.openSideBarMobile = false"
+          to="/"
+        >
+          <span class="lg:hidden text-sm leading-10 font-medium">
+            {{ $t("router.home") }}
+          </span>
+          <span class="hidden lg:block">🏠</span>
+        </router-link>
+        <router-link
+          class="w-full lg:w-12 lg:h-12 rounded text-xl leading-10 bg-neutral-200 dark:bg-neutral-700 flex justify-start lg:justify-center items-center pl-4 lg:pl-0"
+          @click="$store.state.openSideBarMobile = false"
+          to="/about"
+        >
+          <span class="lg:hidden text-sm leading-10 font-medium">
+            {{ $t("router.about") }}
+          </span>
+          <span class="hidden lg:block">📑</span>
+        </router-link>
       </div>
     </aside>
   </Transition>
@@ -26,7 +48,7 @@ import { defineAsyncComponent } from "vue";
 export default {
   name: "SideBar",
   components: {
-    AysncLogoBrand: defineAsyncComponent(() =>
+    AsyncLogoBrand: defineAsyncComponent(() =>
       import("@/components/LogoBrand.vue" /* webpackChunkName: "logo-brand" */)
     ),
   },
@@ -37,16 +59,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.slide-enter-active,
-.slide-leave-active {
-  transition: transform 0.2s ease;
-}
-
-.slide-enter-from,
-.slide-leave-to {
-  transform: translateX(-100%);
-  transition: all 150ms ease-in 0s;
-}
-</style>

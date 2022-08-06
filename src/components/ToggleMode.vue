@@ -1,8 +1,8 @@
 <template>
   <button @click="toggleDark()" @contextmenu.prevent="toggleDark()">
     <Transition mode="out-in">
-      <AysncMoonIcon v-if="isDark" class="w-6 h-6" />
-      <AysncSunIcon v-else-if="!isDark" class="w-6 h-6" />
+      <AsyncMoonIcon v-if="isDark" class="w-6 h-6" />
+      <AsyncSunIcon v-else-if="!isDark" class="w-6 h-6" />
     </Transition>
   </button>
 </template>
@@ -13,10 +13,10 @@ import { defineAsyncComponent } from "vue";
 export default {
   name: "ToggleMode",
   components: {
-    AysncMoonIcon: defineAsyncComponent(() =>
+    AsyncMoonIcon: defineAsyncComponent(() =>
       import("@/icons/MoonIcon.vue" /* webpackChunkName: "moon-icon" */)
     ),
-    AysncSunIcon: defineAsyncComponent(() =>
+    AsyncSunIcon: defineAsyncComponent(() =>
       import("@/icons/SunIcon.vue" /* webpackChunkName: "sun-icon" */)
     ),
   },

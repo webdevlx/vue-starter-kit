@@ -1,3 +1,13 @@
 {
-  "language": "Til"
+  "aAPAVFFBWUI": "Veb-foydalanuvchi interfeyslarini yaratish uchun qulay, samarali va ko'p qirrali asos.",
+  "aboutCoreTeamMembers": "Asosiy jamoa a'zolari bir yoki bir nechta asosiy loyihalarni saqlashda faol ishtirok etadiganlardir. Ular loyiha va uning foydalanuvchilari muvaffaqiyatiga uzoq muddatli sadoqat bilan Vue ekotizimiga katta hissa qo'shdilar.",
+  "coreTeamMembers": "Jamoaning asosiy a'zolari",
+  "getStarted": "Boshlash",
+  "language": "Til",
+  "router": {
+    "about": "Haqida",
+    "home": "Bosh sahifa"
+  },
+  "thePJF": "Progressiv JavaScript ramkasi",
+  "sponsor": "Homiy"
 }

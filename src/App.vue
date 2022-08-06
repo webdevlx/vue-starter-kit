@@ -1,8 +1,12 @@
 <template>
-  <AysncNavBar />
-  <AysncSideBar />
-  <div class="pt-14 lg:pt-16 lg:ml-64">
-    <router-view />
+  <AsyncNavBar />
+  <AsyncSideBar />
+  <div class="pt-14 lg:pt-16 lg:ml-16">
+    <router-view v-slot="{ Component }">
+      <Transition name="page" mode="out-in">
+        <component :is="Component"></component>
+      </Transition>
+    </router-view>
   </div>
 </template>
 
@@ -11,10 +15,10 @@ import { defineAsyncComponent } from "vue";
 export default {
   name: "App",
   components: {
-    AysncNavBar: defineAsyncComponent(() =>
+    AsyncNavBar: defineAsyncComponent(() =>
       import("@/components/NavBar.vue" /* webpackChunkName: "nav-bar" */)
     ),
-    AysncSideBar: defineAsyncComponent(() =>
+    AsyncSideBar: defineAsyncComponent(() =>
       import("@/components/SideBar.vue" /* webpackChunkName: "side-bar" */)
     ),
   },

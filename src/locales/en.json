@@ -1,3 +1,13 @@
 {
-  "language": "Language" 
+  "aAPAVFFBWUI": "An approachable, performant and versatile framework for building web user interfaces.",
+  "aboutCoreTeamMembers": "Core team members are those who are actively involved in the maintenance of one or more core projects. They have made significant contributions to the Vue ecosystem, with a long term commitment to the success of the project and its users.",
+  "coreTeamMembers": "Core Team Members",
+  "getStarted": "Get Started",
+  "language": "Language",
+  "router": {
+    "about": "About",
+    "home": "Home"
+  },
+  "thePJF": "The Progressive JavaScript Framework",
+  "sponsor": "Sponsor"
 }

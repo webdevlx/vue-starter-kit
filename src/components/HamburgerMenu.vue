@@ -6,7 +6,7 @@
     "
     class="lg:hidden"
   >
-    <AysncMenuIcon class="w-6 h-6" />
+    <AsyncMenuIcon class="w-6 h-6" />
   </button>
 </template>
 
@@ -15,7 +15,7 @@ import { defineAsyncComponent } from "vue";
 export default {
   name: "HamburgerMenu",
   components: {
-    AysncMenuIcon: defineAsyncComponent(() =>
+    AsyncMenuIcon: defineAsyncComponent(() =>
       import("@/icons/MenuIcon.vue" /* webpackChunkName: "menu-icon" */)
     ),
   },

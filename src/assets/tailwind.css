@@ -9,7 +9,7 @@ html.dark {
 }
 
 body {
-  @apply bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white select-none;
+  @apply bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white select-none font-inter;
 }
 
 button,
@@ -31,4 +31,27 @@ img {
 }
 .v-leave-to {
   @apply opacity-0 -translate-y-4;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 200ms ease;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  transform: translateX(-100%);
+  transition: all 150ms ease-in 0s;
+}
+
+.page-enter-active,
+.page-leave-active {
+  @apply transition-all ease-linear;
+}
+
+.page-enter-from {
+  @apply opacity-0 translate-y-16;
+}
+.page-leave-to {
+  @apply opacity-0 -translate-y-16;
 }
