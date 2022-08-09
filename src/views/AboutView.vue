@@ -11,7 +11,7 @@
           {{ $t("aboutCoreTeamMembers") }}
         </p>
       </div>
-      <div class="lg:w-1/2 space-y-2">
+      <div class="lg:w-1/2 space-y-6">
         <AsyncTeamMember
           v-for="member in members"
           :key="member"

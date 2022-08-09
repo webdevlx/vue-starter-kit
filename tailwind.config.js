@@ -9,6 +9,9 @@ module.exports = {
       },
       colors: {
         'brand': '#42b983'
+      },
+      fontSize: {
+        '2xs': '10px'
       }
     },
   },
