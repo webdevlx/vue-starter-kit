@@ -6,8 +6,11 @@
   "language": "Язык",
   "router": {
     "about": "О",
-    "home": "Дом"
+    "home": "Дом",
+    "login": "Вход"
   },
   "thePJF": "Прогрессивный JavaScript-фреймворк",
-  "sponsor": "Спонсор"
+  "sponsor": "Спонсор",
+  "email": "Эл. почта",
+  "password": "Пароль"
 }

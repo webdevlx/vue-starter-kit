@@ -6,8 +6,11 @@
   "language": "Language",
   "router": {
     "about": "About",
-    "home": "Home"
+    "home": "Home",
+    "login": "Login"
   },
   "thePJF": "The Progressive JavaScript Framework",
-  "sponsor": "Sponsor"
+  "sponsor": "Sponsor",
+  "email": "Email",
+  "password": "Password"
 }

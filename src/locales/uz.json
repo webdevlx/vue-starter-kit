@@ -6,8 +6,11 @@
   "language": "Til",
   "router": {
     "about": "Haqida",
-    "home": "Bosh sahifa"
+    "home": "Bosh sahifa",
+    "login": "Kirish"
   },
   "thePJF": "Progressiv JavaScript ramkasi",
-  "sponsor": "Homiy"
+  "sponsor": "Homiy",
+  "email": "E-pochta",
+  "password": "Parol"
 }
